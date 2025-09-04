@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-  "type":"commonjs",
-  
-  
-  
+  "type": "commonjs",
   "scripts": {
     "server": "nodemon main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0"
   }
 }
