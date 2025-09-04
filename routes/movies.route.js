@@ -1,25 +1,24 @@
 const express = require("express");
 const router = express.Router();
 
+
+const MovieRead = require("./controllers/movies.controllers.js");
+const MovieCreate = require("./controllers/movies.controllers.js");
+const MovieUpdate = require("./controllers/movies.controllers.js");
+const MovieDelete = require("./controllers/movies.controllers.js");
+
+
 //read
-router.get('/' , (req ,res) => {
-res.send("Read the movies");
-});
+router.get('/' ,MovieRead);
 
 // create
-router.post('/', (req , res) => {
- res.send ("create the movie");
-});
+router.post('/',MovieCreate );
 
 // update
-router.put('/:id' , (req , res) => {
-res.send("update the movies");
-});
+router.put('/:id' ,MovieUpdate );
 
 // delete
-router.delete('/:id' , (req , res) => {
-res.send("Delete the movies");
-});
+router.delete('/:id' , MovieDelete);
 
 
 module.exports = router;
