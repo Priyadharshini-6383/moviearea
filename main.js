@@ -9,6 +9,8 @@ const connectDB = require("./library/db.js");
 
 connectDB();
 
+app.use(express.urlencoded({extended : true}));
+
 app.use(express.json());
 
 app.get('/' , (req , res) => {

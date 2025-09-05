@@ -1,5 +1,5 @@
 
-const movie = require("../models/movies.schema.js");
+const Movie = require("../models/movies.schema.js");
 
 
 
@@ -14,7 +14,7 @@ res.send("Read the movies");
 
 const newMovie = new Movie ({
     title : req.body.title,
-    decription : req.body.description,
+    description : req.body.description,
 });
 
 try {
