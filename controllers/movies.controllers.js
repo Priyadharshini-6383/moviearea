@@ -3,9 +3,30 @@ const Movie = require("../models/movies.schema.js");
 
 
 
- const MovieRead = (req ,res) => {
-res.send("Read the movies");
+ const MovieRead = async (req ,res) => {
+try {
+    const movies = await Movie.find();
+     res.json(movies);
+}
+catch (error) {
+     res.status(500).json({message : "error found"});
+}
 };
+
+const MovieDetail = async (req,res) => {
+    
+    try {
+        const movies =  await Movie.FindById();
+        if (Movie == null) {
+            res.status(500).json({ message : "Cannot find movie"});
+        }
+        else {
+            res.json (movies);
+        }
+    } catch (error) {
+        res.status(500).json({message : "Error found"});
+    }
+}
 
  const MovieCreate = async (req , res) => {
 

@@ -2,12 +2,16 @@ const express = require("express");
 const router = express.Router();
 
 
-const {MovieRead, MovieCreate, MovieUpdate, MovieDelete} = require("../controllers/movies.controllers.js");
+const {MovieRead, MovieDetail , MovieCreate, MovieUpdate, MovieDelete} = require("../controllers/movies.controllers.js");
 
 
 
 //read
 router.get('/' ,MovieRead);
+
+// find by id
+
+router.get('/:id' , MovieDetail);
 
 // create
 router.post('/',MovieCreate);
