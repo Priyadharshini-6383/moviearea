@@ -1,5 +1,5 @@
 
-const movie = require("./models/movies.schema.js");
+const movie = require("../models/movies.schema.js");
 
 
 
