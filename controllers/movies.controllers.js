@@ -59,7 +59,10 @@ const result = await Movie.findOneAndUpdate (
     {
         title : req.body.title,
         description  : req.body.description,
-    }
+    },
+    {
+        new : true,
+    },
 );
 res.status(200).json(result);
     } catch (error) {
@@ -68,26 +71,24 @@ res.status(200).json(result);
 
 
 
-// if (res.body.title != null) {
-//     res.movie.title = res.body.title;
-// }
-// if(res.body.description != null) {
-//     res.movie.description = res.body.description;
-// }
-// try {
-//     const UpdateMovie = await res.movie.save;
-//     res.json(UpdateMovie);
-// }
-// catch(error) {
-//     res.status(500).json({message : "Error found"});
-// }
 
 };
 
 
 
- const MovieDelete = (req , res) => {
-res.send("Delete the movies");
+ const MovieDelete = async (req , res) => {
+    const movieId = req.params.id;
+
+    //const foundmovie = await Movie.findOne( {_id : movieId});
+
+    try {
+         await Movie.deleteOne({_id : movieId});
+         res.json({message : "Movie deleted"});
+        
+    } catch (error) {
+        res.status(500).json({message : "Error found"});
+    }
+
 }
 module.exports = {MovieRead, MovieDetail, MovieCreate , MovieUpdate , MovieDelete};
 
