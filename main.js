@@ -9,7 +9,7 @@ const connectDB = require("./library/db.js");
 
 connectDB();
 
-
+app.use(express.json());
 
 app.get('/' , (req , res) => {
 res.json({message : "Hello students!"});

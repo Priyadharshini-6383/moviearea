@@ -12,6 +12,8 @@ router.get('/' ,MovieRead);
 // create
 router.post('/',MovieCreate);
 
+
+
 // update
 router.put('/:id' ,MovieUpdate);
 
