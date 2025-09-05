@@ -3,9 +3,13 @@ const app = express();
 
 const PORT = 3000 ;
 
+const movieroute = require("./routes/movies.route.js");
+
+const connectDB = require("./library/db.js");
+
+connectDB();
 
 
-const movieroute = require("./routes/movies.route");
 
 app.get('/' , (req , res) => {
 res.json({message : "Hello students!"});
